@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxen - Advanced Hand Imaging Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #e94560;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 130vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('images.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #e24b5f;
+            text-shadow: 0 0 10px #ff0040, 0 0 20px #ff0000;
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #ffffff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 20px #e94560;
+        }
+
+        .cta-button:hover {
+            background-color: #ffffff;
+            color: #e94560;
+            box-shadow: 0 0 30px #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 120px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #00fff5;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #00fff5;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .tech-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .tech-list li {
+            flex-basis: calc(50% - 20px);
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .tech-list li:hover {
+            transform: scale(1.05);
+            background: rgba(233, 69, 96, 0.2);
+        }
+
+        .tech-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: #e2e82b;
+            mask: url('tech-icon.svg') center / contain no-repeat;
+            margin-right: 20px;
+            transition: transform 0.3s;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+
+        .dropbtn a {
+            color: #b3ef28;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            padding: 10px 15px;
+            border-radius: 25px;
+        }
+
+        .dropdown-content a:hover {
+            color: #e94560;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class = "dropdown">
+     <button class="dropbtn">Menu</button>
+     <div class="dropdown-content">
+        <a href="#">About Us</a>
+        <a href="team.html">Team</a>
+        <a href="media.html">Media</a>
+        <a href=".html">Join Us</a>
+        <a href=".html">Research</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+   </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Luxen</h1>
+            <img src="images/images.jpg" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 20px;">
+            <p>Revolutionizing Health Diagnostics through Advanced Hand Imaging</p>
+            <a href="#" class="cta-button">Explore the Future</a>
+            <h3>Will be availiable on:</h3>
+            <img src="images/apple.jpg" alt="hj" style="width: 100px; margin-right: 20px;">
+
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section" id="technology">
+            <h2>Our Technology</h2>
+            <p>Luxen's cutting-edge hand imaging technology harnesses the power of AI to diagnose vitamin deficiencies with unprecedented accuracy and speed, paving the way for personalized nutrition and preventive healthcare.</p>
+        </section>
+
+        <section class="section" id="benefits">
+            <h2>Benefits</h2>
+            <ul class="tech-list">
+                <li><div class="tech-icon"></div>Non-invasive, painless diagnosis</li>
+                <li><div class="tech-icon"></div>Rapid results in under 5 minutes</li>
+                <li><div class="tech-icon"></div>AI-powered accuracy exceeding 99%</li>
+                <li><div class="tech-icon"></div>Early detection of nutritional imbalances</li>
+            </ul>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Join the Revolution</h2>
+            <p>Ready to experience the future of health diagnostics? Get in touch with our team and be part of the Luxen journey.</p>
+            <a href="#" class="cta-button">Contact Us</a>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('particles.js loaded');
+        });
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                if (isElementInViewport(section)) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .testimonials {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 60px 0;
+            margin-bottom: 80px;
+        }
+
+        .testimonial-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .testimonial {
+            flex: 0 0 300px;
+            background: rgba(233, 69, 96, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            scroll-snap-align: start;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial h4 {
+            color: #00fff5;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #00fff5;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #e94560;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00fff5;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <!-- Previous body content remains the same up to the contact section -->
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <img src="client1.jpg" alt="Client 1">
+                    <p>"Luxen's technology has transformed our approach to nutrition. It's fast, accurate, and incredibly insightful."</p>
+                    <h4>Dr. Jane Smith</h4>
+                </div>
+                <div class="testimonial">
+                    <img src="client2.jpg" alt="Client 2">
+                    <p>"As a nutritionist, I've found Luxen's hand imaging to be an invaluable tool in my practice. Highly recommended!"</p>
+                    <h4>Mark Johnson, RD</h4>
+                </div>
+                <div class="testimonial">
+                    <img src="client3.jpg" alt="Client 3">
+                    <p>"The ease of use and rapid results have made Luxen an essential part of our health screening process."</p>
+                    <h4>Sarah Lee, Health Center Director</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#">Hand Imaging Device</a></li>
+                    <li><a href="#">AI Analysis Software</a></li>
+                    <li><a href="#">Healthcare Integration</a></li>
+                    <li><a href="#">Research Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">User Guides</a></li>
+                    <li><a href="#">System Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Luxen Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Previous JavaScript remains the same
+
+        // Add smooth scrolling for testimonials
+        const testimonialContainer = document.querySelector('.testimonial-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        testimonialContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - testimonialContainer.offsetLeft;
+            scrollLeft = testimonialContainer.scrollLeft;
+        });
+
+        testimonialContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        testimonialContainer.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        testimonialContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - testimonialContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            testimonialContainer.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
+
